@@ -48,9 +48,7 @@ resource "google_compute_instance" "instances" {
     }
   }
 
-  # scratch_disk {
-  #   interface = "SCSI"
-  # }
+
 
   network_interface {
     network = local.network
