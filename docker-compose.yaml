@@ -1,0 +1,39 @@
+version: "3"
+services:
+  frontend:
+    container_name: client
+    image: lilianthiauru/yolo-client:1.0.0 
+    depends_on:
+       - backend
+    stdin_open: true
+    ports:
+       - 4000:4000  
+  backend:
+    container_name: backend
+    image: lilianthiauru/yolo-backend:1.0.0 
+    ports:
+       - 6000:6000
+    depends_on:
+       - database
+    environment:
+       - MONGODB_URI='mongodb://lilianthiauru:Royalkenya@2023@172.60.0.10:27017'
+    networks:
+      yolo_test_network:
+       ipv4_address: 172.60.0.9
+  database:
+     container_name: database
+     image: mongo:latest
+     environment:
+       MONGO_INITDB_ROOT_USERNAME: lilianthiauru
+       MONGO_INITDB_ROOT_PASSWORD: Royalkenya@2023
+     ports:
+       - 27017:27017
+     networks:
+       yolo_test_network:
+          ipv4_address: 172.60.0.10
+networks:
+  yolo_test_network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.60.0.0/16
