@@ -1,29 +1,6 @@
-# Requirements
-Make sure that you have the following installed:
-- [node](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04) 
-- npm 
-- [MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) and start the mongodb service with `sudo service mongod start`
-
-## Navigate to the Client Folder 
- `cd client`
-
-## Run the folllowing command to install the dependencies 
- `npm install`
-
-## Run the folllowing to start the app
- `npm start`
-
-## Open a new terminal and run the same commands in the backend folder
- `cd ../backend`
-
- `npm install`
-
- `npm start`
-
- ### Go ahead a nd add a product (note that the price field only takes a numeric input)
-
-  ### Docker docs 
-   Added Docker file on client and backend
-   added docker compose file
-   pushed images to docker hub with correct image tagging and naming
-   
+yolo e-commerce platform automation. 
+set up GCP account and ammend the project details accordingly. 
+SSH keys should be created and set up for validation.
+This was achieved using terraform; resources are provisioned on GCP and the Ansible Playbook is invoked.
+I have used Client and Backed images that were containerised using docker to clone the repository.
+Git ignore has te large files and secrets.
