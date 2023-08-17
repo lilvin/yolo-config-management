@@ -2,7 +2,7 @@ provider "docker" {}
 resource "docker_network" "private_network" {
   name = "my_private_network"
   ipam_config {
-    subnet = "172.35.0.0/16"
+    subnet = "172.20.0.0/16"
   }
 }
 # pulls the image
